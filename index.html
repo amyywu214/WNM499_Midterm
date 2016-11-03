@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Navi: The New Way to Travel</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans" rel="stylesheet">
+
+</head>
+
+<script>
+	$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+
+  });
+});
+
+// $(function(){
+
+// 	$('body').scrollspy({target: ".nav"});
+
+// 	$('[data-spy="scroll"]').each(function () {
+//   var $spy = $(this).scrollspy('refresh')
+
+// });
+   
+
+</script>
+<!-- Look into scroll spying for navigation bar and http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/
+http://codepen.io/bronkula/pen/rrJWKx-->
+<body data-spy="scroll" data-target=".nav" data-offset="50">
+	<div class="container"> 
+		<header>
+			<div class="row">
+			<div class="col-md-6">
+				<img class="logo" src="img/logo.gif" alt="Amy's Logo">
+				</div>
+				<div class="col-md-6">
+				<nav class="nav nav-horizontal">
+					<ul id="navigation">
+						<li><a href="#background">Background</a></li>
+						<li><a href="#strategy">Strategy</a></li>
+						<li><a href="#branding">Branding</a></li>					
+						<li><a href="#interface">Interface</a></li>		
+						<li><a href="#website">Website</a></li>
+						<li><a href="#advertisement">Advertisement</li></a>
+					</ul>
+				</nav>
+			</div>
+</div>
+
+
+			<div> <!-- Header Image -->
+				<img class="header" src="img/navi_head.jpg" alt="">
+			</div>
+		</header>
+
+		<div class="text-middle">
+				<div><!-- Intro -->
+				<h1>Navi, the New Way to Travel</h1>
+				<h2>Identity Project</h2>
+					<p>Navigating around a new city can be overwelming. </p>
+
+					<p>
+			Navi is an app for tourists or those attending conferences to help navigate around San Francisco. The app shows all the viable forms of transportation (e.g. SFMTA, Uber, etc), shows the cost of each and helps get the Users to their destination. This app is one of a kind because it gives viewers multiple forms of transportations and not subject them to ask for directions or rely on taxis around the city.</p>
+			</div>
+			<hr>
+
+				<div id="background"> <!-- The Idea -->
+				<h3>The Idea</h3>
+				<p>I wanted a clean design that was easy to understand. The main design points were to make sure my User was:</p>
+				<p>Stress free, able to explore the city, and has an easy time getting around while learning about the city</p>
+				</div>
+				<hr>
+
+				<div id="strategy"> <!-- Strategy -->
+					<h3>The Strategy</h3>
+					<p>Navi uses a friendly, identi able mascot as well as a simple name would help draw Users to use the app. The simplicity of it would draw users to download and utilize this app. The choice of Hardwell LP STD as our branding font was to counter the fuidity of the whale.</p>
+					<p>For the application’s body text, I chose to use Klinic Slab Book because it’s an easy to read font. The type is a sans-serif font with a modern feel to it that appeals to both younger and older audiences.</p>
+				</div>
+
+				<div class="row"> <!-- Mascot & Name -->
+				<div class="col-xs-12 col-md-6 m-xl-bs p-sm-hs ">
+						<img class="small" src="img/navi_whale.jpg" alt="Navi Mascot Logo">
+				</div>
+				<div class="col-xs-12 col-md-6 m-xl-bs p-sm-hs ">
+						<img class="small" src="img/navi_name.jpg" alt="Navi Logo Name">
+				</div>
+				<div class="col-xs-12 m-xl-bs p-sm-hs ">
+					<img src="img/type_specimen.jpg" alt="Type Specimen">
+				</div>
+				</div>
+				<hr>
+
+				<div id="branding" class="section scrollSpy"> <!-- Branding -->
+					<h3>Branding and Guidelines</h3>
+					<p>The brand has specific guidelines to follow: the color and the spacing of the mascot to the text.</p>
+				</div>
+
+				<div> <!-- Branding Guidelines -->
+						<img src="img/branding_guidelines.jpg" alt="">
+					</div>
+				<hr>
+
+
+				<div id="interface"> <!-- UI Design -->
+					<h3>UI Design: App</h3>
+					<p>The design of the app is all about the Users being able to explore in a new city. I broke the app down to categories: Food, Shopping, Bars, etc and then Users can choose what form of transportation they would like to use.</p>
+				</div>
+
+				<div> <!-- Examples of Design & Interactions -->
+						<img src="img/ui_specimen.jpg" alt="App Interface">
+				</div>
+			<hr>
+
+				<div id="website"><!--  Promo Website -->
+					<h3>UI Design: Promo Website</h3>
+					<p>The promo website is focused on allowing the User to watch a small advertisement that will allow them an idea of why Navi is important for traveling. The website will also direct users to the Apple App Store or Google Play Store</p>
+				</div>
+
+					<div>
+					<img src="img/website.jpg" alt="Call to Action Promo Website and Mockup">
+					</div>
+				<hr>
+
+				<div id="advertisement" class="section scrollSpy"> <!-- Advertisement -->
+					<h3>Advertisement</h3>
+					<p>Our video advertisements will mainly be short, humor based videos. Those who may travel to San Francisco assume the city is small, but not realize exactly how big a small city can be. I also have shirts available with our brand. They’re mainly for
+					employees, but could be for sale to the public as well.</p>
+				</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-md-6 p-sm-hs ">
+				<iframe width="450" height="225" src="https://www.youtube.com/embed/evT9fuETqf0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="col-xs-12 col-md-6 p-sm-hs ">
+		<img src="img/navi-tshirts.jpg" alt="Navi Shirt Merchandise">
+			</div>
+		</div>
+		
+		<div>
+			<hr>
+			<h2>Thanks for scrolling through!</h2>
+		</div>
+
+		</div> <!-- End Container -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+@mixin clearfix {
+  clear:both;
+  content:"";
+  display:table;
+}
+
+@mixin center-child{
+	margin-left:auto;
+	margin-right:auto;
+} // centers child as long as there's a width
+
+@mixin compact{
+	list-style-type:none;
+	margin-top:0;
+	margin-bottom:0;
+	padding-left: 0;
+} // add to make a compact list
+
+@mixin container-make($prefix:''){ // $prefix, if not found then empty string or default
+	.container{
+	  @include center-child;
+
+	  @if($prefix == 'xl'){
+			width:map-get($breakpoints,$prefix);
+	  }
+	  @else if($prefix == 'lg'){
+	  	width:map-get($breakpoints,$prefix);
+	  }
+	  @else{
+		width:auto;
+			  }
+		}
+
+}
+
+@mixin make-columns($prefix:'') {
+	@if($prefix!='') {
+		$prefix: "-#{$prefix}"; // if no prefix, use empty string. if prefix, add a dash before the prefix
+	}
+
+	@for $i from 1 through $columns {
+		.col#{$prefix}-#{$i} {
+			width: percentage($i/$columns);
+		}
+	}
+}
+
+@mixin make-rows{
+	[class*='col-'] {
+		float:left;
+	}
+	.grid{
+		overflow:hidden; // fixes mobile floats. 
+	}
+	.row {
+		&:after{
+			@include clearfix; 
+		}
+		&.gutters{
+			margin-left: -($column-gutter / 2);
+			margin-right: -($column-gutter / 2); // margin will push out. so we want padding to push in. 
+
+			&>[class*='col-']{
+			padding-left: ($column-gutter / 2);
+			padding-right: ($column-gutter / 2); //content inside will push in
+			}
+		}
+	}
+
+}
+
+@mixin make-box-utilities($pre:''){
+	@each $pre-short,$pre-long in $boxes-map{
+		@each $suf-short, $suf-long in $sizes-map{
+			@each $pos-short,$pos-long in $positions-map{
+				.#{$pre-short}#{$pre}-#{$pos-short}#{$suf-short} {
+					#{$pre-long}-#{$pos-long}: $suf-long;
+				}
+			}
+
+			.#{$pre-short}#{$pre}-h#{$suf-short} {
+					#{$pre-long}-left: $suf-long;
+					#{$pre-long}-right: $suf-long;
+
+		}
+
+		.#{$pre-short}#{$pre}-v#{$suf-short} {
+					#{$pre-long}-top: $suf-long;
+					#{$pre-long}-bottom: $suf-long;
+
+			}
+		.#{$pre-short}#{$pre}-#{$suf-short} {
+					#{$pre-long}: $suf-long;
+
+			}
+		}
+	}
+
+	.pull#{$pre}-left{
+		float:left;
+	}
+	.pull#{$pre}-right{
+		float:right;
+	}
+	.pull#{$pre}-none{
+		float:none;
+	}
+	.pull#{$pre}-clear{
+	clear:both;
+	}
+}
