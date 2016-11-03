@@ -1,0 +1,75 @@
+
+.nav{
+  &:after{
+    @include clearfix;
+  }
+  
+  ul{
+    @include compact;
+  }
+  
+  li{
+    
+  }
+  
+  a{
+    display:block;
+    text-decoration:none;
+
+    &:hover{
+      text-decoration:none;
+      color:$sub-color;
+    }
+  }
+  
+  &-horizontal{
+    // Gives us a .nav horizontal selector
+    li{
+      display:inline-block;
+    }
+    
+  }
+  &-pills{
+    @extend .nav-horizontal;
+    a{
+      padding:0.2em 0.5em;
+      border-radius:0.5em;
+    }
+  }
+}
+
+.btn{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  border-width:0;
+  background-color:transparent;
+  font-family:inherit;
+  font-size:inherit;
+  cursor:pointer;
+  
+  &-full{
+    width:100%;
+    &:hover{
+      font-size:$size-large;
+    }
+    
+  }
+}
+
+ .well {
+padding:$size-medium;
+background-color:rgba(0,0,0,0.1);
+margin:1px;
+//way of showing off structural html elements. guide for designing on page 
+
+ }
+
+ .text-justify{
+  text-align:justify;
+ }
+
+ .text-middle{
+  text-align:center;
+ }
+  

@@ -1,0 +1,9 @@
+// sass --watch style.scss:style.min.css --style compressed
+
+@import "partials/variables";
+@import "partials/functions";
+@import "partials/reset";
+@import "partials/classes"; // don't want to change these 4
+@import "partials/grid";
+
+@import "partials/theme"; // your way of desigining anything in the library
